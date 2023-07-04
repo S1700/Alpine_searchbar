@@ -1,0 +1,133 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 140px;
+    margin: 0;
+    background-color: black;
+    color:white;
+    margin-top: 30px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex;
+    align-items: stretch;
+}
+  
+form {
+    color: #555;
+    display: flex;
+    padding: 2px;
+    border: 1px solid currentColor;
+    border-radius: 10px 10px 10px 10px;
+    margin: 0;
+}
+
+.under-search {
+    display: flex;
+    flex-direction: column;
+    max-width: 1060px; 
+    height: 400px;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    color: black;
+    border-top: 3px solid #4d4d4d;
+    padding: 20px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.recent-search-text {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 270px;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.recent-search-text > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recent-search-text > div > svg {
+    display: block;
+}
+
+.view-all-prod {
+    margin: -20px;
+    bottom: 0;
+    font-family: 'Inter', sans-serif;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: 500;
+    max-height: 100px;
+    max-width: 1100px;
+    text-align: center;
+    background-color: #F0F3F5;
+    border-radius: 0 0 10px 10px;
+    border-top: 2px solid #E41F13;
+}
+
+input {
+    transition: all 0.5s ease;
+}
+
+.submitButton {
+    position: absolute;
+    right: 3;
+    top: 3;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 130px;
+    height: 38px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+input[type="search"] {
+    border: none;
+    background: white;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+
+button[type="submit"]:focus, input[type="search"]:focus {
+    box-shadow: 0 0 3px 0 #1183d6;
+    border-color: #1183d6;
+    outline: none;
+}
+  
+form.nosubmit {
+   border: none;
+   padding: 0;
+}
+  
+input.nosubmit {
+    border: 1px solid #555;
+    height: 45px;
+    width: 500px;
+    padding: 9px 4px 9px 40px;
+    background: transparent url("data:image/svg+xml,%3csvg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='16' height='16'%3e%3cpath d='M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z'/%3e%3c/svg%3e") no-repeat 13px center;
+    background-color: white;
+}

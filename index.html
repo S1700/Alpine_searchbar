@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/alpinejs" defer></script>
+        <link rel="stylesheet" href="style.css" />
+        <title> Search bar </title>
+    </head>
+    <body>
+        <div class="container" x-data="{ open: false, width: '500px' }">
+            <form class="nosubmit" post="search.php?q=">
+                <div class="search-wrapper">
+                    <input autocomplete="off" @click="open = true" x-transition x-bind:style="{ width: open ? '1100px' : width, borderRadius: open ? '10px 10px 0 0' : '10px' }" class="nosubmit" type="search" name="q" placeholder="Search for products, manufacturers..." />
+                    <button type="submit" x-show="open" x-transition:enter.delay.700ms x-transition:leave.delay.10ms class="submitButton">Search</button>
+                </div>
+                <svg x-show="open" @click="open = false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="padding-left: 20px; margin-top: 10px;" viewBox="0,0,255.99828,255.99828" width="25px" height="25px" fill-rule="nonzero"><g fill-opacity="0" fill="#dddddd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,255.99828v-255.99828h255.99828v255.99828z" id="bgRectangle"></path></g><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9.15625,6.3125l-2.84375,2.84375l15.84375,15.84375l-15.9375,15.96875l2.8125,2.8125l15.96875,-15.9375l15.9375,15.9375l2.84375,-2.84375l-15.9375,-15.9375l15.84375,-15.84375l-2.84375,-2.84375l-15.84375,15.84375z"></path></g></g></svg>
+            </form>
+            <div class="under-search" x-show="open" x-transition:enter.duration.500ms x-transition:enter.delay.500ms x-transition:leave.duration.400ms>
+                <div style="display: flex; align-items: baseline;">
+                    <p style="color: gray; text-decoration: underline; text-decoration-color: #E41F13; text-underline-offset: 8px; padding-bottom: 10px;">RECENT SEARCHES</p>
+                    <p style="color:gray; text-decoration: underline; font-size: small; padding-left: 80px;">Clear All</p>
+                    <p style="color: gray; text-decoration: underline; text-decoration-color: #E41F13; text-underline-offset: 8px; padding-bottom: 10px; padding-left: 100px;">RECENTLY VIEWED</p>
+                </div>
+                <div class="recent-search-text">
+                    <div>
+                        <p>Electrical</p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,255.99828,255.99828" width="10px" height="10px" style="padding-left: 100px;" fill-rule="nonzero"><g fill-opacity="0" fill="#dddddd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal;"><path d="M0,255.99828v-255.99828h255.99828v255.99828z" id="bgRectangle"></path></g><g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9.15625,6.3125l-2.84375,2.84375l15.84375,15.84375l-15.9375,15.96875l2.8125,2.8125l15.96875,-15.9375l15.9375,15.9375l2.84375,-2.84375l-15.9375,-15.9375l15.84375,-15.84375l-2.84375,-2.84375l-15.84375,15.84375z"></path></g></g></svg>
+                    </div>
+                    <div>
+                        <p>Lighting</p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,255.99828,255.99828" width="10px" height="10px" style="padding-left: 100px;" fill-rule="nonzero"><g fill-opacity="0" fill="#dddddd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal;"><path d="M0,255.99828v-255.99828h255.99828v255.99828z" id="bgRectangle"></path></g><g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9.15625,6.3125l-2.84375,2.84375l15.84375,15.84375l-15.9375,15.96875l2.8125,2.8125l15.96875,-15.9375l15.9375,15.9375l2.84375,-2.84375l-15.9375,-15.9375l15.84375,-15.84375l-2.84375,-2.84375l-15.84375,15.84375z"></path></g></g></svg>
+                    </div>
+                    <div>
+                        <p>Automotive</p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,255.99828,255.99828" width="10px" height="10px" style="padding-left: 100px;" fill-rule="nonzero"><g fill-opacity="0" fill="#dddddd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal;"><path d="M0,255.99828v-255.99828h255.99828v255.99828z" id="bgRectangle"></path></g><g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9.15625,6.3125l-2.84375,2.84375l15.84375,15.84375l-15.9375,15.96875l2.8125,2.8125l15.96875,-15.9375l15.9375,15.9375l2.84375,-2.84375l-15.9375,-15.9375l15.84375,-15.84375l-2.84375,-2.84375l-15.84375,15.84375z"></path></g></g></svg>
+                    </div>
+                </div>
+                <div class="view-all-prod">
+                    <a href="#">View All Products</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
